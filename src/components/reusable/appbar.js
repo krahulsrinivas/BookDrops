@@ -5,11 +5,10 @@ import { useHistory, useLocation } from 'react-router-dom'
 const AppBar = () => {
     const history = useHistory();
     const location = useLocation();
-    const [,,removeCookie]=useCookies();
+    const [cookies,,removeCookie]=useCookies();
     let home = (location.pathname === "/home")?"ui active inverted button":"ui inverted button";
-    let yourStories = (location.pathname === "/yourStories")?"ui active inverted button":"ui inverted button";
+    let yourStories = (location.pathname === "/yourStories"|| location.pathname === "/yourDrafts")?"ui active inverted button":"ui inverted button";
     let profile = (location.pathname === "/profile")?"ui active inverted button":"ui inverted button";
-  
     return (
         <div className="ui inverted  menu" style={{ margin: "1px" }}>
             <div class="header item" style={{fontSize:"20px" }}>
@@ -27,10 +26,13 @@ const AppBar = () => {
                     history.push('/yourStories');
                 }}>Your Stories</button>
                 <button className={profile} style={{ marginTop: "10px",marginLeft:"5px" }} onClick={() => {
-                    history.push('/profile');
-                }}>Your Profile</button>
+                    console.log(cookies['username'])
+                    history.push({pathname:'/profile',state:{username:cookies['username']}});
+                }}>Profile</button>
                 <button className="ui red inverted button" style={{ marginTop: "10px",marginLeft:"5px" }} onClick={()=>{
+                    removeCookie("username");
                     removeCookie("auth-token");
+                    history.push('/login');
                 }}>Logout</button>
             </div>
         </div>

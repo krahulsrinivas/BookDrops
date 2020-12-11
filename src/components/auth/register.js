@@ -15,8 +15,10 @@ const Register = (props) => {
         if (auth['email'].trim() !== "" || auth['username'].trim() !== "" || auth['password1'].trim() !== "" || auth['password2'].trim() !== "") {
             if (auth['password1'].trim() === auth['password2'].trim()) {
                 setLoader(true);
+                console.log(auth);
                 axios.post('http://localhost:3000/auth/register', auth).then((res) => {
-                    setCookies('auth-token',res.data);
+                    setCookies('auth-token',res.data['token']);
+                    setCookies('username',res.data['username']);
                     history.push("/home");
                 }).catch((e) => {
                     console.log(e);

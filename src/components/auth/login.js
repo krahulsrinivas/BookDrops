@@ -17,8 +17,10 @@ const Login=()=>{
         if ( auth['username'].trim() !== "" || auth['password'].trim() !== "") {
                 setLoader(true);
                 await axios.post('http://localhost:3000/auth/login', auth).then((res) => {
-                            setCookies('auth-token',res.data);
-                            history.push("/home");
+                    console.log(res.data)
+                    setCookies('auth-token',res.data['token']);
+                    setCookies('username',res.data['username']);
+                    history.push("/home");
                 }).catch((e) => {
                     console.log(e);
                     setLoader(false);

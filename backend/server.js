@@ -16,7 +16,7 @@ app.listen(process.env.PORT || 3000,()=>{
 });
 
 // Connecting to Mongodb
-mongoose.connect(process.env.URI,{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.URI,{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
 const db = mongoose.connection;
 db.on('error', (err) => console.log(`connection error:${err}`));
 db.once('open', () => {
@@ -25,6 +25,8 @@ db.once('open', () => {
 
 // Routes
 const userRouter=require('./routes/authRoute');
-const home=require('./routes/home')
+const bookRouter=require('./routes/bookRoute');
+const user=require('./routes/userRoute')
+app.use('/',bookRouter);
 app.use('/auth',userRouter);
-app.use('/test',home)
+app.use('/user',user);
