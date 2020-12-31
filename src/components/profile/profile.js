@@ -36,7 +36,7 @@ const Profile = () => {
                         <h3 style={{ fontSize: "25px" }}>{user['createdAt']}</h3>
                     </div>
                     <div style={{ marginTop: "75px" }}>
-                        <h1>Books by krahulsrinivas</h1>
+                        <h1>{`Books by ${user['UserName']}`}</h1>
                         <hr class="solid" />
                         <div class="ui grid">
                         {stories.map((book)=>(

@@ -45,7 +45,6 @@ const YourStories = () => {
                                 </div>
                                 <div class="content" style={{ marginTop: "10px",marginBottom: "20px" }}>
                                     <h1 class="header" style={{ fontSize: "30px", color: "white" }}>{book['title']}</h1>
-                                    <button className="ui red inverted white  button" style={{position:"absolute",right:"160px"}}>delete book</button>
                                     <div class="meta" style={{ fontSize: "22px", color: "white",width:"450px"}}>
                                         <p>{book['description']}</p>
                                     </div>

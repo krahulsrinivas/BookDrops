@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Editor, EditorState, RichUtils } from 'draft-js';
+import { Editor, EditorState, RichUtils,convertToRaw,convertFromRaw} from 'draft-js';
 import createStyles from 'draft-js-custom-styles';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
@@ -8,10 +8,19 @@ import axios from 'axios';
 const Editorpage = () => {
     const history = useHistory();
     const location = useLocation();
+    const [contentState,setContentState]=useState();
+    console.log(location)
     const [editorState, setEditorState] = useState(
-        () => EditorState.createEmpty(),
+        () => {
+           if (location.state.book['content']){
+               console.log('hi');
+            return EditorState.createWithContent(convertFromRaw(JSON.parse(location.state.book['content'])));
+        }else{
+            
+            return EditorState.createEmpty();
+        }}
     );
-    console.log(editorState);
+    
 
     const { styles, customStyleFn } = createStyles(['font-size']);
     const handleKeyCommand = (command, state) => {
@@ -22,7 +31,10 @@ const Editorpage = () => {
     };
 
     const onChange = (e) => {
-        setEditorState(e);
+    const contentState = e.getCurrentContent();
+     setContentState(contentState);
+     setEditorState(e);
+    
     }
 
     const onFormatClick = (type) => {
@@ -30,16 +42,19 @@ const Editorpage = () => {
     }
 
     const handleDraft = async () => {
-        await axios.post('http://localhost:3000/draft',{'id':location.state.id,'content':editorState}).then((res) => {
-            console.log('hi');
+        const content= JSON.stringify(convertToRaw(contentState))
+        await axios.post('http://localhost:3000/draft',{'id':location.state.id,'content':content}).then((res) => {
+            alert("Book Successfully Published");
+            history.push('/yourDrafts');
                       }).catch((e) => {
                           console.log(e);
                       });
-        history.push('./yourDrafts');
+        
     };
 
     const handlePublish = async () => {
-        await axios.post('http://localhost:3000/publish', { 'id': location.state.id,'content':editorState}).then((res) => {
+        const content= JSON.stringify(convertToRaw(contentState))
+        await axios.post('http://localhost:3000/publish', { 'id': location.state.id,'content':content}).then((res) => {
             alert("Book Successfully Published");
             history.push('/yourStories');
         }).catch((e) => {

@@ -14,7 +14,7 @@ const Description = () => {
 
   const handleSubmit=async (book)=>{
     await axios.post('http://localhost:3000/postBook',book).then((res) => {
-      history.push({pathname:'/editor',state:{title:res.data['title'],id:res.data['_id']}});
+      history.push({pathname:'/editor',state:{title:res.data['title'],id:res.data['_id'],book:{content:""}}});
                 }).catch((e) => {
                     console.log(e);
                 });

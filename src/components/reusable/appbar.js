@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useCookies } from 'react-cookie';
 import { useHistory, useLocation } from 'react-router-dom'
 
@@ -6,6 +6,7 @@ const AppBar = () => {
     const history = useHistory();
     const location = useLocation();
     const [cookies,,removeCookie]=useCookies();
+    const [search,setSearch]=useState('');
     let home = (location.pathname === "/home")?"ui active inverted button":"ui inverted button";
     let yourStories = (location.pathname === "/yourStories"|| location.pathname === "/yourDrafts")?"ui active inverted button":"ui inverted button";
     let profile = (location.pathname === "/profile")?"ui active inverted button":"ui inverted button";
@@ -15,10 +16,12 @@ const AppBar = () => {
                 BookDrops
         </div>
             <div className="ui transparent inverted icon input" style={{ marginLeft: "10px" }} >
-                <input type="text" placeholder="Search by Username "></input>
-                <i class="search icon"></i>
+                <input type="text" placeholder="Search by Username " value={search} onChange={(e)=>setSearch(e.target.value)}></input>
+                <button className="ui black button" style={{color:"black",border:"0px solid black"}}onClick={()=>{
+                    history.push({pathname:'/profile',state:{username:search}});
+                }}><i class="search icon"></i></button>
             </div> 
-            <div style={{position:"relative",left:"350px"}}>
+            <div style={{position:"relative",left:"300px"}}>
                 <button className={home} style={{ marginTop: "10px",marginLeft:"5px" }} onClick={() => {
                     history.push('/home');
                 }}>Home</button>

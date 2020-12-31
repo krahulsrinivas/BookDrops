@@ -40,4 +40,22 @@ router.get('/getBooks',async (req, res) => {
     })
 });
 
+router.get('/books',async (req, res) => {
+    const books={};
+    await Book.find({status:req.query.status}).limit(5).then( async (popularBooks)=>{
+        await Book.find({status:req.query.status,genre:"Comedy"}).limit(5).then( async (comedyBooks)=>{
+            await Book.find({status:req.query.status,genre:"Action"}).limit(5).then( async (actionBooks)=>{
+                await Book.find({status:req.query.status,genre:"Romance"}).limit(5).then( async (romanceBooks)=>{
+                    books['popularBooks']=popularBooks;
+                    books['comedyBooks']=comedyBooks;
+                    books['actionBooks']=actionBooks;
+                    books['romanceBooks']=romanceBooks;
+                    res.send(books);
+                })
+            })
+
+        })
+    })
+});
+
 module.exports = router;
