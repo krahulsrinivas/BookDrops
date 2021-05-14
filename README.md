@@ -35,5 +35,5 @@
      alt="Logo" width="33%">
 <img src="images/home2.png"  
      alt="Logo" width="33%" >
-<img src="images/home3.png" align="right"
+<img src="images/home3.png" 
      alt="Logo" width="33%"  >
