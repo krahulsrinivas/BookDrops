@@ -49,7 +49,7 @@
 <img src="images/editor1.png" 
      alt="Logo" width="45%">
 <img src="images/editor2.png"  align="right"
-     alt="Logo" width="45%" height="315px">
+     alt="Logo" width="45%" >
 <br/>
 
 <br/>
