@@ -25,7 +25,7 @@
      alt="Logo" width="45%" >
 <img src="images/register.png" align="right"
      alt="Logo" width="45%" >
-<br width="100px"/>
+<br/>
 
 
 <br/>
@@ -35,15 +35,7 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
 
 ### The Homepage consists of all the types of generes the website has to offer including the most popular books to read.
 ---
