@@ -21,29 +21,19 @@
 ---
 <br/>
 
-<img src="images/login.png" align="left"
+<img src="images/login.png" 
      alt="Logo" width="45%" >
-<img src="images/register.png" align="right"
+<img src="images/register.png" 
      alt="Logo" width="45%" >
 <br/>
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 
 ### The Homepage consists of all the types of generes the website has to offer including the most popular books to read.
 ---
 <br/>
 
-<img src="images/home1.png" align="center"
-     alt="Logo" width="33%">
-<img src="images/home2.png" align="center"
+<img src="images/home1.png" 
+     alt="Logo" width="32%">
+<img src="images/home2.png" 
      alt="Logo" width="33%" >
-<img src="images/home3.png" align="center"
+<img src="images/home3.png"
      alt="Logo" width="33%" >
