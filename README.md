@@ -32,8 +32,8 @@
 <br/>
 
 <img src="images/home1.png" 
-     alt="Logo" width="32%">
-<img src="images/home2.png" 
+     alt="Logo" width="33%">
+<img src="images/home2.png"  
      alt="Logo" width="33%" >
 <img src="images/home3.png" align="right"
-     alt="Logo" width="33%" >
+     alt="Logo" width="33%"  >
