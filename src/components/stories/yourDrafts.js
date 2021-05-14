@@ -31,30 +31,29 @@ const YourDrafts = () => {
                         New Story
                     </button>
                 </div>
-                <div style={{ marginLeft: "150px",marginTop: "50px",marginRight: "150px" }}>
+                <div style={{ marginLeft: "100px",marginTop: "50px",marginRight: "100px" }}>
                     <div className="ui inverted pointing menu">
                         <button className="ui inverted white  button" style={{ fontSize: "20px", margin: "10px" }} onClick={()=>history.push('/yourStories')}>Your Stories</button>
                         <button className="ui active inverted button" style={{ fontSize: "20px", margin: "10px" }}>Your Drafts</button>
                     </div>
-                    <hr class="solid" />
-                    <div style={{ marginTop: "30px", marginLeft: "10px" }}>
+                    {(stories!==[])?<div style={{border:"2px solid grey"}}>
+                    <div style={{ marginTop: "30px", marginLeft: "30px",marginRight: "50px" }}>
                         <div class="ui inverted items">
                         {stories.map((book)=>(
-                            <div class="item">
-                                <div class="image">
-                                    <img src={book['imageUrl']}></img>
-                                </div>
+                            <div class="item" style={{borderBottom:"1px solid white"}}>
+                                
+                                    <img src={book['imageUrl']} alt="null" height="275px" width="180px" style={{marginRight:"40px",marginBottom:"30px"}}></img>
                                 <div class="content" style={{ marginTop: "20px" }}>
                                     <h1 class="header" style={{ fontSize: "27px", color: "white" }}>{book['title']}</h1>
                                     <div class="meta" style={{ fontSize: "22px", color: "white",width:"450px"}}>
                                         <p>{book['description']}</p>
                                     </div>
-                                    <div class="description" style={{ fontSize: "15px", color: "red" }}>
-                                        <p>{`Written by ${book['author']}`}</p>
+                                    <div class="description" style={{ fontSize: "18px", color: "#b4b5b8" }}>
+                                        <p>{`by ${book['author']}`}</p>
                                     </div>
-                                    <div class="extra" style={{ fontSize: "20px", color: "white", marginTop: "40px" }}>
+                                    <div class="extra" style={{ fontSize: "20px", color: "white", marginTop: "40px",width:"650px",marginBottom:"25px"}}>
                                         {`Genre:  ${book['genre']}`}
-                                    <button className="ui inverted blue button" style={{ marginLeft: "40px" }} onClick={()=>{
+                                    <button className="ui inverted blue button" style={{marginLeft:"450px"}} onClick={()=>{
                                         history.push({pathname:"/editor",state:{"book":book}})
                                     }}>
                                         Continue Writing
@@ -64,7 +63,8 @@ const YourDrafts = () => {
                             </div>))}
                         </div>
                     </div>
-                </div>
+                </div>:<div></div>}
+            </div>
             </div>
         </div>
 

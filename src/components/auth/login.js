@@ -31,15 +31,15 @@ const Login=()=>{
     }
     return(
         <center>
-        <div className="ui inverted segment" style={{marginTop:"50px",marginBottom:"50px",marginLeft:"500px",marginRight:"500px"}}>
-        <h1>Welcome to BookDrops</h1>
+        <div className="ui inverted segment" style={{marginTop:"2px",marginBottom:"50px",marginLeft:"400px",marginRight:"400px"}}>
+        <h1 style={{fontFamily:"fantasy",fontWeight:"bold",fontSize:"50px"}}>Welcome to BookDrops</h1>
         </div>
-        <div className="ui inverted segment" style={{marginLeft:"550px",marginRight:"550px"}}>
-            <form className="ui form" onSubmit={(event) => event.preventDefault()} style={{ marginBottom: '125px'}}>
-                <div style={{ margin: '10px' }}><h1>Login</h1></div>
+        <div className="ui inverted segment" style={{marginLeft:"400px",marginRight:"400px"}}>
+            <form className="ui form" onSubmit={(event) => event.preventDefault()} style={{ marginBottom: '43%'}}>
+                <h1 style={{ margin: '10px',fontStyle:"italic",fontWeight:"bold",fontSize:"45px"}}>Sign-In</h1>
                 <div className="ui container">
                     <div>
-                        <div className="ui large input" style={{ margin: '10px' }}>
+                        <div className="ui big input" style={{ margin: '15px',width:"500px"}}>
                             <input
                                 type="text"
                                 placeholder="Username"
@@ -49,7 +49,7 @@ const Login=()=>{
                         </div>
                     </div>
                     <div>
-                        <div className="ui large input" style={{ margin: '10px' }}>
+                        <div className="ui big input" style={{ margin: '15px',width:"500px" }}>
                             <input
                                 type="password"
                                 placeholder="Password"
@@ -58,19 +58,19 @@ const Login=()=>{
                             />
                         </div>
                     </div>
-                    <div style={{ margin: '10px' }}>
-                        <button className="ui inverted teal button" onClick={handleSubmit}>
-                            Login
+                    <div style={{ margin: '10px'}}>
+                        <button className="ui inverted teal button" onClick={handleSubmit} style={{width:"150px",height:"40px"}}>
+                            Sign-In
                             </button>
                     </div>
-                    <div>Don't Have an account?
-                        <Link to="/"><button className="ui inverted teal button" style={{ margin: '10px' }}>Register</button></Link>
+                    <div style={{fontSize:"25px"}}>Don't Have an account?
+                        <Link to="/"><button className="ui inverted teal button" style={{ margin: '10px',width:"100px",height:"35px"}}>Register</button></Link>
                     </div>
                 </div>
             </form>
             </div>
             {loader === true ? (
-                <div className="ui large active loader"></div>
+                <div className="ui large active loader" style={{ marginTop: '20%' }}></div>
             ) : (
                     <div></div>
                 )}

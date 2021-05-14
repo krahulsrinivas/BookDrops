@@ -17,7 +17,7 @@ const AppBar = () => {
         </div>
             <div className="ui transparent inverted icon input" style={{ marginLeft: "10px" }} >
                 <input type="text" placeholder="Search by Username " value={search} onChange={(e)=>setSearch(e.target.value)}></input>
-                <button className="ui black button" style={{color:"black",border:"0px solid black"}}onClick={()=>{
+                <button className="ui black button" style={{color:"white",border:"0px solid black"}}onClick={()=>{
                     history.push({pathname:'/profile',state:{username:search}});
                 }}><i class="search icon"></i></button>
             </div> 
