@@ -18,7 +18,7 @@
 <br/>
 <br/>
 
-## Login/Register pages to make a new account or login to an existing one. It uses cookies and JWT to persist the user to all server requests and has React private routes to disable asscessing pages thorugh the url.
+### Login/Register pages to make a new account or login to an existing one. It uses cookies and JWT to persist the user to all server requests and has React private routes to disable asscessing pages thorugh the url.
 ---
 <br/>
 
@@ -29,7 +29,7 @@
 <br/>
 <br/>
 
-## The Homepage consists of all the types of generes the website has to offer including the most popular books to read.
+### The Homepage consists of all the types of generes the website has to offer including the most popular books to read.
 ---
 <br/>
 
@@ -43,7 +43,7 @@
 <br/>
 <br/>
 
-## The editor pages help u start writing your book with ease it takes in an image url and title then takes you to the second page lets you start writing your book.
+### The editor pages help u start writing your book with ease it takes in an image url and title then takes you to the second page lets you start writing your book.
 ---
 <br/>
 <img src="images/editor1.png" 
@@ -54,7 +54,7 @@
 
 <br/>
 
-## Here you have your Drafts and Stories pages. The Drafts are all the books u are currently writing and only for you to see. Where as the Stories are all the books u have published for others to view.
+### Here you have your Drafts and Stories pages. The Drafts are all the books u are currently writing and only for you to see. Where as the Stories are all the books u have published for others to view.
 ---
 <br/>
 <img src="images/stories.png" 
@@ -63,7 +63,7 @@
 
 <br/>
 
-## This page shows a users profile. Here u can see his picture and email and all the books that particular user has written.
+### This page shows a users profile. Here u can see his picture and email and all the books that particular user has written.
 ---
 <br/>
 <img src="images/profile.png" 
