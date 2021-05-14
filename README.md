@@ -23,7 +23,7 @@
 
 <img src="images/login.png" 
      alt="Logo" width="45%" >
-<img src="images/register.png" 
+<img src="images/register.png" align="right" 
      alt="Logo" width="45%" >
 <br/>
 
@@ -35,5 +35,5 @@
      alt="Logo" width="32%">
 <img src="images/home2.png" 
      alt="Logo" width="33%" >
-<img src="images/home3.png"
+<img src="images/home3.png" align="right"
      alt="Logo" width="33%" >
