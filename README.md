@@ -23,8 +23,11 @@
 <br/>
 
 <img src="images/login.png" 
-     alt="Logo" width="45%" >
-<img src="images/register.png" align="right" 
+     alt="Logo" >
+
+<br/>
+
+<img src="images/register.png" 
      alt="Logo" width="45%" >
 <br/>
 <br/>
@@ -34,11 +37,13 @@
 <br/>
 
 <img src="images/home1.png" 
-     alt="Logo" width="33%">
+     alt="Logo" >
+<br/>
 <img src="images/home2.png"  
-     alt="Logo" width="33%" >
+     alt="Logo" >
+<br/>
 <img src="images/home3.png" 
-     alt="Logo" width="33%"  >
+     alt="Logo" >
 
 <br/>
 <br/>
@@ -47,7 +52,7 @@
 ---
 <br/>
 <img src="images/editor1.png" 
-     alt="Logo" width="60%">
+     alt="Logo">
 <br/>
 
 <br/>
@@ -56,7 +61,7 @@
 ---
 <br/>
 <img src="images/stories.png" 
-     alt="Logo" width="60%">
+     alt="Logo">
 <br/>
 
 <br/>
